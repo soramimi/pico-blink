@@ -5,7 +5,7 @@ PICO=pci-0000:00:14.0-usb-0:9:1.0-scsi-0:0:0:0-part1
 
 all:
 	-mkdir build
-	cd build; NAME=$(NAME) cmake ..; make
+	cd build; NAME=$(NAME) PICO_SDK_PATH=$(PICO_SDK_PATH) cmake ..; make
 
 run:
 	sudo cp build/$(NAME).uf2 /mnt/pico
